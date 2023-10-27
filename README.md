@@ -8,10 +8,15 @@ An extremely simple CLI app to help you track your TODOs as a queue of tasks.
 ```
 $ todoq
 ```
-and use commands to manipulate your task queue:
+and use **commands** to manipulate your task queue:
 - `list` - List your current tasks
 - `push [TASK]` - Push a task on top of the queue _(name shouldn't contain whitespace!)_
 - `pop` - Pop the bottom task off the queue
+- `swap` - Swap the current and next tasks
+- `flip` - Flip/swap the _last_ two tasks
+- `defer` - Put the current task on the bottom of the list
+- `undefer` - Opposite of `defer`
+- `clear` - Clear the task list
 - `q`/`quit`/`exit` - Quit the program _(naturally)_
 
 ## Examples
