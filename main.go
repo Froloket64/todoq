@@ -51,6 +51,17 @@ func deferTask[T any](slice *[]T) error {
     return nil
 }
 
+func undeferTask[T any](slice *[]T) error {
+    if len(*slice) == 0 {
+        return errors.New("Empty slice")
+    }
+
+    xs, x := (*slice)[0:len(*slice)-1], (*slice)[len(*slice)-1]
+    (*slice) = append([]T{x}, xs...)
+
+    return nil
+}
+
 func pushTask(name string, tasks *[]string) {
     var new_task string
 
@@ -139,6 +150,9 @@ func main() {
 
         case "defer":
             deferTask(&tasks)
+
+        case "undefer":
+            undeferTask(&tasks)
 
         case "edit": // TODO?: Add more stuff to edit
             var task_id int
