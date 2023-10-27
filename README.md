@@ -35,4 +35,8 @@ Task "math-hw" completed!
 > list
 Current task queue:
 - dishes
+
+> q
 ```
+
+After you exit, `todoq` saves the current task list in `$HOME/todoq.tsk` on Linux and alike, undefined behaviour on Windows (for now).
