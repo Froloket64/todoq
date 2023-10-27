@@ -24,6 +24,10 @@ func pushTask(name string, tasks *[]string) {
     if name == "" {
         fmt.Print("New task: ")
         fmt.Scanln(&new_task)
+
+        if new_task == "" {
+            return
+        }
     } else {
         new_task = name
     }
