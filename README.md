@@ -44,4 +44,4 @@ Current task queue:
 > q
 ```
 
-After you exit, `todoq` saves the current task list in `$HOME/todoq.tsk` on Linux and alike, undefined behaviour on Windows (for now).
+After you exit, `todoq` saves the current task list in `$HOME/todoq.tsk` on Linux and alike, undefined behavior on Windows (for now).
