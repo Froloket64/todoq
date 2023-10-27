@@ -98,6 +98,20 @@ func main() {
         case "pop":
             popTask(&tasks)
 
+        case "edit": // TODO?: Add more stuff to edit
+            var task_id int
+            var new_name string
+
+            fmt.Printf("Number of task to edit: ")
+            fmt.Scanln(&task_id)
+
+            fmt.Printf("New name for task n.%v: ", task_id)
+            fmt.Scanln(&new_name)
+
+            if new_name != "" {
+                tasks[task_id-1] = new_name
+            }
+
         case "exit", "quit", "q":
             saveTasks("$HOME/todoq.tsk", tasks)
 
