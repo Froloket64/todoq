@@ -112,6 +112,9 @@ func main() {
                 tasks[task_id-1] = new_name
             }
 
+        case "clear":
+            tasks = nil // NOTE: Is this GC-compliant?
+
         case "exit", "quit", "q":
             saveTasks("$HOME/todoq.tsk", tasks)
 
