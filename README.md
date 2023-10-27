@@ -17,6 +17,7 @@ and use **commands** to manipulate your task queue:
 - `defer` - Put the current task on the bottom of the list
 - `undefer` - Opposite of `defer`
 - `clear` - Clear the task list
+- `edit [NUMBER]` - Edit selected task (only renaming for now)
 - `q`/`quit`/`exit` - Quit the program _(naturally)_
 
 ## Examples

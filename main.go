@@ -158,8 +158,12 @@ func main() {
             var task_id int
             var new_name string
 
-            fmt.Printf("Number of task to edit: ")
-            fmt.Scanln(&task_id)
+            if arg1 == "" {
+                fmt.Printf("Number of task to edit: ")
+                fmt.Scanln(&task_id)
+            } else {
+                fmt.Sscan(arg1, &task_id)
+            }
 
             fmt.Printf("New name for task n.%v: ", task_id)
             fmt.Scanln(&new_name)
