@@ -18,6 +18,17 @@ func pop[T any](slice *[]T) (T, error) {
     return popped, nil
 }
 
+func swap[T any](slice *[]T) error {
+    if len(*slice) == 0 {
+        return errors.New("Empty slice")
+    }
+
+    (*slice)[1], (*slice)[0] =
+        (*slice)[0], (*slice)[1]
+
+    return nil
+}
+
 func pushTask(name string, tasks *[]string) {
     var new_task string
 
@@ -97,6 +108,9 @@ func main() {
 
         case "pop":
             popTask(&tasks)
+
+        case "swap":
+            swap(&tasks)
 
         case "edit": // TODO?: Add more stuff to edit
             var task_id int
