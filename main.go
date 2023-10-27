@@ -40,6 +40,17 @@ func flip[T any](slice *[]T) error {
     return nil
 }
 
+func deferTask[T any](slice *[]T) error {
+    if len(*slice) == 0 {
+        return errors.New("Empty slice")
+    }
+
+    x, xs := (*slice)[0], (*slice)[1:]
+    (*slice) = append(xs, x)
+
+    return nil
+}
+
 func pushTask(name string, tasks *[]string) {
     var new_task string
 
@@ -125,6 +136,9 @@ func main() {
 
         case "flip":
             flip(&tasks)
+
+        case "defer":
+            deferTask(&tasks)
 
         case "edit": // TODO?: Add more stuff to edit
             var task_id int
