@@ -44,8 +44,8 @@ func popTask(tasks *[]string) {
 func listTasks(tasks []string) {
     fmt.Println("Current task queue:")
 
-    for _, task := range tasks {
-        fmt.Printf("- %v\n", task)
+    for i, task := range tasks {
+        fmt.Printf("%v. %v\n", i+1, task)
     }
 
     fmt.Println("")

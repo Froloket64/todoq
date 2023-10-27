@@ -22,19 +22,19 @@ Current task queue:
 > push math-hw
 > list
 Current task queue:
-- math-hw
+1. math-hw
 
 > push dishes
 > list
 Current task queue:
-- math-hw
-- dishes
+1. math-hw
+2. dishes
 
 > pop
 Task "math-hw" completed!
 > list
 Current task queue:
-- dishes
+1. dishes
 
 > q
 ```
