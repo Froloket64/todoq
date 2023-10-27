@@ -29,6 +29,17 @@ func swap[T any](slice *[]T) error {
     return nil
 }
 
+func flip[T any](slice *[]T) error {
+    if len(*slice) == 0 {
+        return errors.New("Empty slice")
+    }
+
+    (*slice)[len(*slice)-2], (*slice)[len(*slice)-1] =
+        (*slice)[len(*slice)-1], (*slice)[len(*slice)-2]
+
+    return nil
+}
+
 func pushTask(name string, tasks *[]string) {
     var new_task string
 
@@ -111,6 +122,9 @@ func main() {
 
         case "swap":
             swap(&tasks)
+
+        case "flip":
+            flip(&tasks)
 
         case "edit": // TODO?: Add more stuff to edit
             var task_id int
